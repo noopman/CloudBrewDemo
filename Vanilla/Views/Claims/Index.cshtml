@@ -1,0 +1,85 @@
+﻿@using System.Security.Claims
+@using System.Text
+@using System.Threading
+@using Vanilla.Lib.Security
+@model dynamic
+
+@{
+	IEnumerable<Claim> claims = User.GetClaims();
+}
+@functions {
+	private string PrincipalTypeNames()
+	{
+		return PrettyPrintTypeNames(Thread.CurrentPrincipal.GetType());
+	}
+
+	private string IdentityTypeNames()
+	{
+		return PrettyPrintTypeNames(Thread.CurrentPrincipal.Identity.GetType());
+	}
+
+	private static string PrettyPrintTypeNames(Type type)
+	{
+		var stringBuilder = new StringBuilder(type.FullName);
+		do
+		{
+			type = type.BaseType;
+			if (type != null)
+			{
+				stringBuilder.Append(" => ").Append(type.FullName);
+			}
+		} while (type != null);
+
+		return stringBuilder.ToString();
+	}
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Show current claims</title>
+	<style>
+		table.claims td {
+			border: 1px solid black;
+			padding: 5px;
+		}
+
+		.header {
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p><span class="header">Principal:</span> @PrincipalTypeNames()</p>
+		<p><span class="header">Identity:</span> @IdentityTypeNames()</p>
+
+		@if (claims.Any())
+	{
+			<div class="header">User Claims:</div>
+			<div>
+				<table class="claims">
+					<thead>
+						<tr>
+							<td><span class="header">Claim Type</span></td>
+							<td><span class="header">Claim Value</span></td>
+							<td><span class="header">Claim ValueType</span></td>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var claim in claims)
+			{
+							<tr>
+								<td>@claim.Type</td>
+								<td>@claim.Value</td>
+								<td>@claim.ValueType</td>
+							</tr>
+			}
+					</tbody>
+				</table>
+			</div>
+	}
+
+	</div>
+</body>
+</html>

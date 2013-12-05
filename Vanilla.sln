@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanilla", "Vanilla\Vanilla.csproj", "{BD6848D6-608B-4BB2-A3CA-9AEA0CB5438F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DAB0907E-3D37-47AB-A5DD-419ED161C4EA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanilla.Lib", "Vanilla.Lib\Vanilla.Lib.csproj", "{FBF3F322-64DB-43E7-A227-700F659A77C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD6848D6-608B-4BB2-A3CA-9AEA0CB5438F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6848D6-608B-4BB2-A3CA-9AEA0CB5438F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6848D6-608B-4BB2-A3CA-9AEA0CB5438F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6848D6-608B-4BB2-A3CA-9AEA0CB5438F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBF3F322-64DB-43E7-A227-700F659A77C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBF3F322-64DB-43E7-A227-700F659A77C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBF3F322-64DB-43E7-A227-700F659A77C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBF3F322-64DB-43E7-A227-700F659A77C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
